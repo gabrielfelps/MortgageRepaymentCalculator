@@ -24,10 +24,15 @@ label {
   margin-bottom: 0;
 }
 
-input {
+input[type="number"] {
+  color: var(--slate-900);
+  font-family: inherit;
+  font-weight: var(--font-weight-bold);
   border: 1px solid var(--slate-700);
-  padding: 10px;
+  padding: 9.5px;
   width: 100%;
+  caret-color: var(--slate-900);
+  transition: all 150ms ease-in-out;
 }
 
 input.border-left {
@@ -35,7 +40,7 @@ input.border-left {
   border-radius: 0 4px 4px 0;
 }
 
-.border-right {
+input.border-right {
   border-right: none;
   border-radius: 4px 0 0 4px;
 }
@@ -68,6 +73,7 @@ form {
   padding: 8px 12px;
   background: var(--slate-100);
   border: 1px solid var(--slate-700);
+  transition: all 150ms ease-in-out;
 }
 
 .input-container .span-left {
@@ -80,6 +86,17 @@ form {
   border-radius: 0 4px 4px 0;
 }
 
+.input-container:focus-within span {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--slate-900);
+}
+
+.input-container:focus-within input {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
 .radio-container {
   display: flex;
   align-items: center;
@@ -87,17 +104,42 @@ form {
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
+  transition: all 150ms ease-in-out;
 }
 
 input[type="radio"] {
-  margin-right: 13px;
-  width: auto;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
 }
 
 .radio-container label {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
   color: var(--slate-900);
   font-size: var(--font-size-normal);
   font-weight: var(--font-weight-bold);
+}
+
+.radio-container label::before {
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border: 1px solid var(--slate-900);
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+input[type="radio"]:checked + label::before {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 0 0 2px var(--white), inset 0 0 0 6px var(--primary-color);
+}
+
+.radio-container:has(input[type="radio"]:checked) {
+  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .btn-submit {
