@@ -1,9 +1,10 @@
 :root {
-  --font-family: "Plus Jakarta Sans", sans-serif;
+  --font-principal: "Plus Jakarta Sans", sans-serif;
 
   --font-weight-normal: 500;
   --font-weight-bold: 700;
 
+  --font-size-small: 0.8125rem; /* 13px */
   --font-size-normal: 1rem; /* 16px */
   --font-size-big: 1.5rem; /* 24px */
   --font-size-biggest: 3rem; /* 48px */

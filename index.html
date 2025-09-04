@@ -10,36 +10,60 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
   <h1>Mortgage Calculator</h1>
+  <button class="btn-reset">Clear All</button>
   <form>
-    <button type="reset">Clear All</button>
+    <div class="mortgage-amount-container">
+      <label for="mortgageAmount">Mortgage Amount</label>
+      <div class="input-container">
+        <span class="span-left">&pound</span>
+        <input class="border-left" type="number" name="mortgageAmount" id="mortgageAmount" required>
+      </div>
+    </div>
 
-    <label for="mortgageAmount">Mortgage Amount</label>
-    <input type="number" name="mortgageAmount" id="mortgageAmount" required>
+    <div class="mortgage-term-container">
+      <label for="mortgageTerm">Mortgage Term</label>
+      <div class="input-container">
+        <input class="border-right" type="number" name="mortgageTerm" id="mortgageTerm" required>
+        <span class="span-right">years</span>
+      </div>
+    </div>
 
-    <label for="mortgageTerm">Mortgage Term</label>
-    <input type="number" name="mortgageTerm" id="mortgageTerm" required>
+    <div class="interest-rate-container">
+      <label for="interestRate">Interest Rate</label>
+      <div class="input-container">
+        <input class="border-right" type="number" name="interestRate" id="interestRate" step="0.01" required>
+        <span class="span-right">%</span>
+      </div>
+    </div>
 
-    <label for="interestRate">Interest Rate</label>
-    <input type="number" name="interestRate" id="interestRate" step="0.01" required>
+    <div class="mortgage-type-container">
+      <label for="mortgageType">Mortgage Type</label>
 
-    <label for="mortgageType">Mortgage Type</label>
-    <label for="mortgageType1">Repayment</label>
-    <input type="radio" name="mortgageType" id="mortgageType1" value="repayment" required>
+      <div class="radio-container">
+        <input type="radio" name="mortgageType" id="mortgageType1" value="repayment" required>
+        <label class="radio-label" for="mortgageType1">Repayment</label>
+      </div>
 
-    <label for="mortgageType2">Interest Only</label>
-    <input type="radio" name="mortgageType" id="mortgageType2" value="interestOnly" required>
+      <div class="radio-container">
+        <input type="radio" name="mortgageType" id="mortgageType2" value="interestOnly" required>
+        <label class="radio-label" for="mortgageType2">Interest Only</label>
+      </div>
+    </div>
 
-    <button type="submit">Calculate Repayments</button>
+    <button class="btn-submit" type="submit">
+      <img src="images/icon-calculator.svg" alt="">
+      Calculate Repayments
+    </button>
   </form>
 
-  <div class="empty-result-container">
-    <img src="assets/images/illustration-empty.svg" alt="">
+  <!-- <div class="empty-result-container">
+    <img src="images/illustration-empty.svg" alt="">
     <div class="empty-result-text">
       <h2>Results shown here</h2>
       <p>Complete the form and click “calculate repayments” to see what
@@ -64,7 +88,7 @@
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/gabrielfelps" target="_blank">@gabrielfelps</a>.
-  </div>
+  </div> -->
 </body>
 
 </html>

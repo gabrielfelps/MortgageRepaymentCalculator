@@ -1,5 +1,8 @@
 @import "general.css";
 
 /* Assets */
-@import "./assets/typography.css";
-@import "./assets/colors.css";
+@import "assets/typography.css";
+@import "assets/colors.css";
+
+/* Main */
+@import "mobile.css";

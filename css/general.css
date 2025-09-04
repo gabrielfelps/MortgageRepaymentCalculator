@@ -8,3 +8,19 @@ img {
   display: block;
   max-width: 100%;
 }
+
+body {
+  font-family: var(--font-principal);
+  font-weight: var(--font-weight-normal);
+  padding: 30px 20px;
+  max-width: 350px;
+  margin-inline: auto;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+}
