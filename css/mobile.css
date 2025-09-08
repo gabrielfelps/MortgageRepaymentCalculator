@@ -29,7 +29,7 @@ input[type="number"] {
   font-family: inherit;
   font-weight: var(--font-weight-bold);
   border: 1px solid var(--slate-700);
-  padding: 9.5px;
+  padding: 10px;
   width: 100%;
   caret-color: var(--slate-900);
   transition: all 150ms ease-in-out;
