@@ -24,7 +24,8 @@ label {
   margin-bottom: 0;
 }
 
-input[type="number"] {
+input[type="number"],
+input[type="text"] {
   color: var(--slate-900);
   font-family: inherit;
   font-weight: var(--font-weight-bold);
