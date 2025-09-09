@@ -15,9 +15,12 @@
 
 <body>
 
-  <h1>Mortgage Calculator</h1>
-  <button class="btn-reset">Clear All</button>
-  <form>
+  <header class="container">
+    <h1>Mortgage Calculator</h1>
+    <button class="btn-reset">Clear All</button>
+  </header>
+
+  <form class="container">
     <div class="mortgage-amount-container">
       <label for="mortgageAmount">Mortgage Amount</label>
       <div class="input-container">
@@ -62,30 +65,34 @@
     </button>
   </form>
 
-  <!-- <div class="empty-result-container">
-    <img src="images/illustration-empty.svg" alt="">
-    <div class="empty-result-text">
-      <h2>Results shown here</h2>
-      <p>Complete the form and click “calculate repayments” to see what
-        your monthly repayments would be.</p>
+  <div class="bg-container">
+    <div class="result-container container empty">
+      <img src="images/illustration-empty.svg" alt="">
+      <div class="result-text">
+        <h2>Results shown here</h2>
+        <p>Complete the form and click “calculate repayments” to see what
+          your monthly repayments would be.</p>
+      </div>
     </div>
   </div>
 
-  <div class="result-container">
-    <div class="result-text">
-      <h2>Your results</h2>
-      <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and
-        click “calculate repayments” again.</p>
-    </div>
-    <div class="result-values">
-      <span>Your monthly repayments</span>
-      <p></p>
-      <span>Total you'll repay over the term</span>
-      <p></p>
+  <div class="bg-container">
+    <div class="result-container completed">
+      <div class="result-text container">
+        <h2>Your results</h2>
+        <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and
+          click “calculate repayments” again.</p>
+      </div>
+      <div class="result-values">
+        <span>Your monthly repayments</span>
+        <p>&pound1,797.74</p>
+        <div class="line"></div>
+        <span>Total you'll repay over the term</span>
+        <p>&pound539,322.94</p>
+      </div>
     </div>
   </div>
-
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/gabrielfelps" target="_blank">@gabrielfelps</a>.
   </div> -->
