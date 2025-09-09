@@ -70,7 +70,7 @@ form {
 .input-container span {
   font-weight: var(--font-weight-bold);
   color: var(--slate-700);
-  padding: 8px 12px;
+  padding: 8.4px 12px;
   background: var(--slate-100);
   border: 1px solid var(--slate-700);
   transition: all 150ms ease-in-out;
@@ -185,7 +185,7 @@ input[type="radio"]:checked + label::before {
   display: flex;
   flex-direction: column;
   color: var(--white);
-  padding: 20px 0 30px 0;
+  padding: 20px 20px 30px;
 }
 
 .result-container h2 {
