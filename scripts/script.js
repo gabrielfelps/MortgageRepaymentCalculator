@@ -5,6 +5,7 @@ const outMonthlyInstallment = document.querySelector(
 const outTotalToBePaid = document.querySelector("[data-total-to-be-paid]");
 
 import { repaymentMethod, interestOnly } from "./modules/mortgagetype.js";
+import resultSectionAttributeChanger from "./modules/resultsection.js";
 
 form.addEventListener("submit", (e) => {
   const mortgageAmount = Number(form.mortgageAmount.value.replace(/[.,]/g, ""));
@@ -15,8 +16,10 @@ form.addEventListener("submit", (e) => {
 
   if (form.mortgageType1.checked) {
     repaymentMethod(mortgageAmount, mortgageTerm, interestRate);
+    resultSectionAttributeChanger();
   } else {
     interestOnly(mortgageAmount, mortgageTerm, interestRate);
+    resultSectionAttributeChanger();
   }
 });
 
