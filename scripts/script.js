@@ -4,10 +4,12 @@ const outMonthlyInstallment = document.querySelector(
 );
 const outTotalToBePaid = document.querySelector("[data-total-to-be-paid]");
 
+import { repaymentMethod, interestOnly } from "./modules/mortgagetype.js";
+
 form.addEventListener("submit", (e) => {
-  const mortgageAmount = Number(form.mortgageAmount.value.replace(/[.,]/g, "")); // Valor do Empréstimo: £300,000
-  const interestRate = Number(form.interestRate.value); // Taxa de Juros Anual: 5.25%
-  const mortgageTerm = Number(form.mortgageTerm.value); // Prazo do Empréstimo: 25 anos
+  const mortgageAmount = Number(form.mortgageAmount.value.replace(/[.,]/g, ""));
+  const interestRate = Number(form.interestRate.value);
+  const mortgageTerm = Number(form.mortgageTerm.value);
 
   e.preventDefault();
 
@@ -18,42 +20,4 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-function repaymentMethod(mortgageAmount, mortgageTerm, interestRate) {
-  const totalInstallmentsNumber = mortgageTerm * 12;
-  const montlyFeesTaxes = interestRate / 100 / 12;
-
-  const powerTerm = Math.pow(1 + montlyFeesTaxes, totalInstallmentsNumber);
-  const numerator = mortgageAmount * montlyFeesTaxes * powerTerm;
-  const denominator = powerTerm - 1;
-
-  const monthlyInstallment = numerator / denominator;
-
-  const totalToBePaid = monthlyInstallment * totalInstallmentsNumber;
-
-  outMonthlyInstallment.innerText = monthlyInstallment.toLocaleString("en-GB", {
-    style: "currency",
-    currency: "GBP",
-  });
-  outTotalToBePaid.innerText = totalToBePaid.toLocaleString("en-GB", {
-    style: "currency",
-    currency: "GBP",
-  });
-}
-
-function interestOnly(mortgageAmount, mortgageTerm, interestRate) {
-  const totalInstallmentsNumber = mortgageTerm * 12;
-  const montlyFeesTaxes = interestRate / 100 / 12;
-
-  const monthlyInstallment = mortgageAmount * montlyFeesTaxes;
-  const totalToBePaid =
-    monthlyInstallment * totalInstallmentsNumber + mortgageAmount;
-
-  outMonthlyInstallment.innerText = monthlyInstallment.toLocaleString("en-GB", {
-    style: "currency",
-    currency: "GBP",
-  });
-  outTotalToBePaid.innerText = totalToBePaid.toLocaleString("en-GB", {
-    style: "currency",
-    currency: "GBP",
-  });
-}
+export { outMonthlyInstallment, outTotalToBePaid };
