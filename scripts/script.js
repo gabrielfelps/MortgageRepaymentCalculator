@@ -14,7 +14,7 @@ form.addEventListener("submit", (e) => {
   if (form.mortgageType1.checked) {
     repaymentMethod(mortgageAmount, mortgageTerm, interestRate);
   } else {
-    interestOnly();
+    interestOnly(mortgageAmount, mortgageTerm, interestRate);
   }
 });
 
@@ -29,6 +29,24 @@ function repaymentMethod(mortgageAmount, mortgageTerm, interestRate) {
   const monthlyInstallment = numerator / denominator;
 
   const totalToBePaid = monthlyInstallment * totalInstallmentsNumber;
+
+  outMonthlyInstallment.innerText = monthlyInstallment.toLocaleString("en-GB", {
+    style: "currency",
+    currency: "GBP",
+  });
+  outTotalToBePaid.innerText = totalToBePaid.toLocaleString("en-GB", {
+    style: "currency",
+    currency: "GBP",
+  });
+}
+
+function interestOnly(mortgageAmount, mortgageTerm, interestRate) {
+  const totalInstallmentsNumber = mortgageTerm * 12;
+  const montlyFeesTaxes = interestRate / 100 / 12;
+
+  const monthlyInstallment = mortgageAmount * montlyFeesTaxes;
+  const totalToBePaid =
+    monthlyInstallment * totalInstallmentsNumber + mortgageAmount;
 
   outMonthlyInstallment.innerText = monthlyInstallment.toLocaleString("en-GB", {
     style: "currency",
